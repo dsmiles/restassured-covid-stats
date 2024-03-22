@@ -19,6 +19,15 @@ jobs:
           distribution: 'corretto'
           cache: 'maven'
 
+      - name: Write value to Properties-file
+        uses: christian-draeger/write-properties@1.1.0
+        with:
+          path: './src/test/resources/properties/config.properties'
+          property: |
+            'api.key'
+          value: |
+            ${{ secrets.API_KEY }}
+
       - name: Build with Maven and run tests
         run: mvn test
 
