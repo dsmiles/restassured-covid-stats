@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "success": {
+      "type": "boolean"
+    },
+    "result": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "country": {
+              "type": "string"
+            },
+            "totalcases": {
+              "type": "string"
+            },
+            "newCases": {
+              "type": "string"
+            },
+            "totaldeaths": {
+              "type": "string"
+            },
+            "newDeaths": {
+              "type": "string"
+            },
+            "totalRecovered": {
+              "type": "string"
+            },
+            "activeCases": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "country",
+            "totalcases",
+            "newCases",
+            "totaldeaths",
+            "newDeaths",
+            "totalRecovered",
+            "activeCases"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "country": {
+              "type": "string"
+            },
+            "totalcases": {
+              "type": "string"
+            },
+            "newCases": {
+              "type": "string"
+            },
+            "totaldeaths": {
+              "type": "string"
+            },
+            "newDeaths": {
+              "type": "string"
+            },
+            "totalRecovered": {
+              "type": "string"
+            },
+            "activeCases": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "country",
+            "totalcases",
+            "newCases",
+            "totaldeaths",
+            "newDeaths",
+            "totalRecovered",
+            "activeCases"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "success",
+    "result"
+  ]
+}
