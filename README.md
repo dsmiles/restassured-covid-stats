@@ -1,29 +1,48 @@
-# Covid-19 Statistics API
+# COVID-19 Coronavirus Statistics API
 
-I recently came across a really useful website called CollectApi. CollectApi is a platform where you can browse many different APIs as well as connect, share and more. 
+I recently discovered CollectAPI, a platform hosting various APIs. One that caught my interest is the COVID-19 Coronavirus Statistics API, providing global COVID-19 data sourced from the World Health Organization (WHO).
 
-https://collectapi.com/
+## Collect API
 
-You will need to create an account in order to generate an API token for use with the various APIs. There is currently 4 package types:
+Before accessing the API, you need to create an account on CollectAPI to obtain an API token. I chose the free tier, which has some request limitations, but serves most needs well. Visit [CollectAPI](https://collectapi.com/) to sign up.
 
-- Free
-- Basic
-- Premium
-- Enterprise
+## COVID-19 API
 
-I chose to use the free account which does have some restrictions on the number of requests you can make, but is more than enough for my needs.
+This API offers comprehensive COVID-19 statistics worldwide, sourced from WHO. It features four endpoints:
+- `GET /countriesData`
+- `GET /totalData`
+- `GET /coronaNews`
+- `GET /continentData`
 
-Whilst browsing the list of APIs I came across the Covid-19 Statistics API. This API provides a wealth of information about the Covid-19 pandemic. The API provides information such as:
+More details can be found [here](https://collectapi.com/api/corona/covid-19-coronavirus-statistics-api).
 
-Service that gets the effects of the COVID-19 virus worldwide, and the data of the World Health Organization (WHO) in general and in detail.
+## Requirements
 
-https://collectapi.com/api/corona/covid-19-coronavirus-statistics-api
+- Java 21 (versions 11 or 17 may also work)
+- Maven
+- Git
+- JUnit 5
+- [REST-assured](https://rest-assured.io)
 
-GET /countriesData
-GET /totalData
-GET /coronaNews
-GET /continentData
+## Usage
 
-## TODO 
+To run the test framework, follow these steps:
 
-Add more detail here...
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/dsmiles/covid-19-statistics-api.git
+    cd covid-19-statistics-api
+    ```
+
+2. Run the Maven test command:
+    ```bash
+    mvn clean test
+    ```
+
+### GitHub Actions
+
+A GitHub Actions workflow is set up to run tests on each push. You can find it in the `.github/workflows` directory.
+
+The workflow uses GitHub Secrets to store the API token securely. The token is then inserted into the `config.properties` file using the `write-properties` action by Christian Draeger, available on the [GitHub Marketplace](https://github.com/marketplace/actions/write-properties). The token value is obscured in logs for security.
+
+Ensure you obtain an API token from CollectAPI and store it in your repository's secrets with the appropriate name.
