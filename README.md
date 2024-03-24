@@ -37,13 +37,14 @@ Brief outline of my design strategy for the test framework:
 `controller` class that contains the API request and response logic.
 
 - The framework uses the REST-assured library to make API calls and validate the response. The response data is deserialized 
-into Java objects using the Jackson library for easy manipulation and validation.
+into Java objects using the Jackson library for easy manipulation and validation. Lombok `@Data` annotations have also 
+been used to reduce boilerplate code. 
 
 - The test framework follows best practices for API testing, including verifying the response status code, headers, and
 body. The tests are written in a clear and concise manner, making them easy to understand and maintain.
 
 - The framework uses the JUnit 5 library to write and execute tests. The tests are run using Maven, which handles the 
-test execution and generates reports.
+test execution and generates reports. Test execution order has also been set by using the `@TestMethodOrder` annotation. 
 
 - The framework is set up to run on GitHub Actions, which automatically runs the tests on each push to the repository. The 
 API token is stored securely in GitHub Secrets and inserted into the test framework using the GitHub Actions workflow.
@@ -56,10 +57,13 @@ This example was written using the following:
 - Java 21
 - Maven
 - JUnit 5
+- Lombok
 - [REST-assured](https://rest-assured.io)
 - CollectAPI
 - GitHub Actions
 - GitHub Secrets
+
+Note: Java 11 or higher is required to run the test framework. I recently upgraded to Java 21, which is the latest LTS.
 
 ## Usage
 
