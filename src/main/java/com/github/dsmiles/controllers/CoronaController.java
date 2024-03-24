@@ -22,7 +22,7 @@ public class CoronaController {
 
     /**
      * Constructor to initialize the controller with a request and response specification.
-     * Could be enhanced to authorized and unauthorized requests.
+     * Could be enhanced to add authorized and unauthorized requests.
      */
     public CoronaController() {
         BaseSpec specStrategy = new BaseSpec();
