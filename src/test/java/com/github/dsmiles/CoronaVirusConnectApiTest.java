@@ -93,5 +93,6 @@ class CoronaVirusConnectApiTest {
         assertTrue(continentNames.contains("Europe"));
         assertTrue(continentNames.contains("South America"));
         assertTrue(continentNames.contains("Oceania"));
-        assertTrue(continentNames.contains("Africa"));    }
+        assertTrue(continentNames.contains("Africa"));
+    }
 }
