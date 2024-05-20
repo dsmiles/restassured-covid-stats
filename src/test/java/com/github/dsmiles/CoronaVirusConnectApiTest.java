@@ -12,9 +12,9 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class CoronaVirusConnectApiTest {
 
-    public static final int NUMBER_OF_COUNTRIES = 231;
-    public static final int NUMBER_OF_NEWS_ARTICLES = 16;
-    public static final int NUMBER_OF_CONTINENTS = 6;
+    private static final int NUMBER_OF_COUNTRIES = 231;
+    private static final int NUMBER_OF_NEWS_ARTICLES = 16;
+    private static final int NUMBER_OF_CONTINENTS = 6;
     private CoronaController coronaController;
 
     @BeforeAll
