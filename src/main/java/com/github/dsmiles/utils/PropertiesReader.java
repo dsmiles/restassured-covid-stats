@@ -8,9 +8,9 @@ import java.util.Properties;
 
 /**
  * This class reads properties from the config.properties file.
- * I've not implemented the singleton pattern here because the framework is relatively simple, doesn't
- * have strict resource constraints, and doesn't require global access to configuration settings. It
- * doesn't need the added complexity of a singleton.
+ * I've not implemented the singleton pattern here because the framework is relatively simple,
+ * doesn't have strict resource constraints, and doesn't require global access to configuration
+ * settings. It doesn't need the added complexity of a singleton.
  */
 public class PropertiesReader {
 

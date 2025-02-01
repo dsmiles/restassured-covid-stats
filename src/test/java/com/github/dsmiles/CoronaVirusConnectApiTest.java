@@ -68,6 +68,7 @@ class CoronaVirusConnectApiTest {
     @Test
     @Order(5)
     @DisplayName("Get the latest corona virus related news")
+    @Disabled("Endpoint no longer returns any data")
     void getCoronaNews() {
         CovidNewsResponse response = coronaController.getCoronaNews();
         assertTrue(response.isSuccess());
@@ -94,5 +95,32 @@ class CoronaVirusConnectApiTest {
         assertTrue(continentNames.contains("South America"));
         assertTrue(continentNames.contains("Oceania"));
         assertTrue(continentNames.contains("Africa"));
+    }
+
+    @Test
+    @Order(7)
+    @DisplayName("Get the corona virus values recorded by continent")
+    void getContinentDataAlternateMethod() {
+        CovidContinentDataResponse response = coronaController.getContinentData();
+        assertTrue(response.isSuccess());
+        assertEquals(NUMBER_OF_CONTINENTS, response.getResult().size());
+
+        // Extract the list of continent names from the response
+        List<String> continentNames = response.getResult().stream()
+                .map(CovidContinentData::getContinent)
+                .toList();
+
+        // Define the expected continent names
+        List<String> expectedContinents = List.of(
+                "North America",
+                "Asia",
+                "Europe",
+                "South America",
+                "Oceania",
+                "Africa"
+        );
+
+        // Assert the continent names contain all expected values
+        assertTrue(continentNames.containsAll(expectedContinents), "Missing expected continents");
     }
 }

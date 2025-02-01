@@ -32,6 +32,7 @@ public class CoronaController {
 
     /**
      * Retrieves the collection containing corona values recorded so far by all countries.
+     *
      * @return COVID-19 statistics collection by country.
      */
     public CovidCountryDataResponse getCountriesData() {
@@ -46,6 +47,7 @@ public class CoronaController {
 
     /**
      * Retrieves the corona values recorded for a specific country.
+     *
      * @param country The name of the country to retrieve data for.
      * @return COVID-19 statistics for the specified country.
      */
@@ -61,6 +63,7 @@ public class CoronaController {
 
     /**
      * Retrieves the total corona values recorded.
+     *
      * @return Total COVID-19 statistics.
      */
     public CovidTotalDataResponse getTotalData() {
@@ -74,7 +77,8 @@ public class CoronaController {
 
     /**
      * Retrieves news about the coronavirus.
-     * @return COVID-19 related news articles.
+     *
+     * @return COVID-19 related news articles
      */
     public CovidNewsResponse getCoronaNews() {
         return given(requestSpec)
@@ -88,6 +92,7 @@ public class CoronaController {
     /**
      * Retrieves continent-wide COVID-19 data.
      * Retrieves the corona values recorded so far by continents.
+     *
      * @return COVID-19 data by continent.
      */
     public CovidContinentDataResponse getContinentData() {
@@ -101,6 +106,7 @@ public class CoronaController {
 
     /**
      * Generic method to get a resource from the API.
+     *
      * @param path The path of the resource.
      * @param responseClass The class type of the response.
      * @param <T> The type of the response.
